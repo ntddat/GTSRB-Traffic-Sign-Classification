@@ -1,34 +1,11 @@
 import numpy as np
 import cv2 as cv
 import pandas as pd
-import keras
-import tensorflow as tf
-import os
-import random
-from keras import backend as K
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from keras.utils import to_categorical
 from sklearn import metrics
-
-# setting seeds to ensure reproducibility
-# following the top answer on this post:
-# https://stackoverflow.com/questions/50659482/why-cant-i-get-reproducible-results-in-keras-even-though-i-set-the-random-seeds?rq=2
-# seed_value = 16
-# os.environ['PYTHONHASHSEED']=str(seed_value)
-# random.seed(seed_value)
-# np.random.seed(seed_value)
-# tf.random.set_seed(seed_value)
-# however, unfortunately it might be difficult to ensure
-# that the same results are observed in multiple environments.
-# the results my local device might not be the same as the 
-# marker's
-# if this is the case, i'm honestly not sure how to fix it
-
-# addendum: via post #440 on ed, cnn variability is expected
-# since the global seeds were not working anyways, i decided
-# to comment them out
 
 metadataDF = pd.read_csv("./train/train_metadata.csv")
 

@@ -1,12 +1,7 @@
 import numpy as np
 import cv2 as cv
 import pandas as pd
-import keras
-import tensorflow as tf
-import os
-import random
-from keras import backend as K
-from sklearn.model_selection import train_test_split, KFold
+from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Conv2D, MaxPooling2D, Dense, Flatten, Dropout
 from keras.utils import to_categorical
